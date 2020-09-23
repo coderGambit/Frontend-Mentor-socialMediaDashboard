@@ -1,0 +1,39 @@
+html{
+    box-sizing: border-box;
+}
+
+*, *::before, *::after{
+    box-sizing: inherit;
+}
+
+:root{
+    /* Primary colours */
+    --lime-green: hsl(163, 72%, 41%);
+    --bright-red: hsl(356, 69%, 56%);
+    --facebook: hsl(208, 92%, 53%);
+    --twitter: hsl(203, 89%, 53%);
+    --instagram: linear-gradient(hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+    --youtube:  hsl(348, 97%, 39%);
+
+    /* Toggle */
+    --dark-theme:  linear-gradient hsl(210, 78%, 56%), hsl(146, 68%, 55%);
+    --light-theme:  hsl(230, 22%, 74%);
+
+    /* Dark theme */
+    --background-color-dark:  hsl(230, 17%, 14%);
+    --top-background-color-dark: hsl(232, 19%, 15%);
+    --card-background-dark:  hsl(228, 28%, 20%);
+    --text-color-dark: hsl(228, 34%, 66%); 
+    --white-text-dark: hsl(0, 0%, 100%);
+
+    /* Light theme */
+    --background-color-light: hsl(0, 0%, 100%);
+    --top-background-color-light: hsl(225, 100%, 98%);
+    --card-background-light:  hsl(227, 47%, 96%);
+    --text-color-light: hsl(228, 12%, 44%); 
+    --white-text-light: hsl(230, 17%, 14%);
+
+    /* Typography */
+    --inter-normal: 400 14px 'Inter', sans-serif;
+    --inter-bold: 700 14px 'Inter', sans-serif;
+}
