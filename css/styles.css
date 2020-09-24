@@ -52,9 +52,9 @@ body{
     z-index: -1;
 }
 
-.flex-container{
+.container{
     max-width: 1200px;
-    margin: 2.5em 5em;
+    margin: 2.5rem 5rem;
 }
 
 .card-heading-section{
@@ -66,7 +66,7 @@ body{
 
 .app-info > h1{
     color: var(--text-color-2-light);
-    font-size: 1.8rem;
+    font-size: 1.9em;
 }
 
 .toggle{
@@ -77,7 +77,7 @@ body{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin: 0 5em;
+    margin: 0 5rem;
     gap: 20px;
 }
 
@@ -136,7 +136,22 @@ body{
 }
 
 .instagram{
-    border-top: 4px solid var(--instagram);
+    border-top: 4px solid transparent;
+    background-clip: padding-box;
+    position: relative;
+}
+
+/* We need a pseudo element to achieve gradient border since 
+   a border colour cannot be set to a gradient */
+.instagram::before{
+    content: '';
+    background-image: var(--instagram);
+    position: absolute;
+    border-radius: 5px;
+    width: 250px;
+    height: 250px;
+    top: -4px;
+    z-index: -1;
 }
 
 .youtube{
@@ -152,26 +167,25 @@ body{
     color: var(--bright-red);
 }
 
-.overview-section{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 20px;
-}
-
 .overview-text{
-    width: 100%;
-    flex: 0 0 auto;
-    font-size: 1.5rem;
+    margin: 4rem 5rem 2rem;
+    display: block;
+    font-size: 1.8em;
     font-weight: 700;
     color: var(--text-color-1-light);
+}
+
+.overview-section{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 250px);
+    justify-content: space-between;
+    gap: 20px;
 }
 
 .overview-card{
     width: 250px;
     height: 125px;
     background-color: var(--card-background-light);
-    flex: 0 0 auto;
     border-radius: 5px;
     display: grid;
     grid-template-columns: 1fr 1fr;
