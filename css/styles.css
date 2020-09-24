@@ -1,9 +1,14 @@
 html{
     box-sizing: border-box;
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
 }
 
 *, *::before, *::after{
     box-sizing: inherit;
+    padding: 0;
+    margin: 0;
 }
 
 :root{
@@ -12,7 +17,7 @@ html{
     --bright-red: hsl(356, 69%, 56%);
     --facebook: hsl(208, 92%, 53%);
     --twitter: hsl(203, 89%, 53%);
-    --instagram: linear-gradient(hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+    --instagram: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
     --youtube:  hsl(348, 97%, 39%);
 
     /* Toggle */
@@ -23,17 +28,171 @@ html{
     --background-color-dark:  hsl(230, 17%, 14%);
     --top-background-color-dark: hsl(232, 19%, 15%);
     --card-background-dark:  hsl(228, 28%, 20%);
-    --text-color-dark: hsl(228, 34%, 66%); 
-    --white-text-dark: hsl(0, 0%, 100%);
+    --text-color-1-dark: hsl(228, 34%, 66%); 
+    --text-color-2-dark: hsl(0, 0%, 100%);
 
     /* Light theme */
     --background-color-light: hsl(0, 0%, 100%);
     --top-background-color-light: hsl(225, 100%, 98%);
     --card-background-light:  hsl(227, 47%, 96%);
-    --text-color-light: hsl(228, 12%, 44%); 
-    --white-text-light: hsl(230, 17%, 14%);
+    --text-color-1-light: hsl(228, 12%, 44%); 
+    --text-color-2-light: hsl(230, 17%, 14%);
+}
 
-    /* Typography */
-    --inter-normal: 400 14px 'Inter', sans-serif;
-    --inter-bold: 700 14px 'Inter', sans-serif;
+body{
+    background-color: var(--background-color-light);
+}
+
+.top-BG{
+    background-color: var(--top-background-color-light);
+    width: 100%;
+    height: 240px;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}
+
+.flex-container{
+    max-width: 1200px;
+    margin: 2.5em 5em;
+}
+
+.card-heading-section{
+    color: var(--text-color-1-light);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+}
+
+.app-info > h1{
+    color: var(--text-color-2-light);
+    font-size: 1.8rem;
+}
+
+.toggle{
+    margin-left: auto;
+}
+
+.social-media{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 5em;
+    gap: 20px;
+}
+
+.large-card{
+    border-radius: 5px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 250px;
+    flex: 0 0 auto;
+    background-color: var(--card-background-light);
+}
+
+.large-card > .social-info{
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 20px;
+    color: var(--text-color-1-light);
+    font-weight: 700;
+}
+
+.large-card > .follower-count{
+    grid-column: 2/6;
+    grid-row-start: 4;
+    font-weight: 700;
+    font-size:4.3em;
+    color: var(--text-color-2-light);
+}
+
+.large-card > .follower-text{
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: var(--text-color-1-light);
+}
+
+.large-card > :last-child{
+    margin-top: 20px;
+}
+
+.daily-change{
+    font-weight: 700;
+    display: flex;
+    gap: 3px;
+    align-items: center;
+}
+
+.facebook{
+    border-top: 4px solid var(--facebook);
+}
+
+.twitter{
+    border-top: 4px solid var(--twitter);
+}
+
+.instagram{
+    border-top: 4px solid var(--instagram);
+}
+
+.youtube{
+    border-top: 4px solid var(--youtube);
+}
+
+.green-text{
+    color: var(--lime-green);
+
+}
+
+.red-text{
+    color: var(--bright-red);
+}
+
+.overview-section{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.overview-text{
+    width: 100%;
+    flex: 0 0 auto;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-color-1-light);
+}
+
+.overview-card{
+    width: 250px;
+    height: 125px;
+    background-color: var(--card-background-light);
+    flex: 0 0 auto;
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 20px;
+}
+
+.overview-card-heading{
+    font-weight: 700;
+}
+
+.overview-card-icon{
+    justify-self: end;
+}
+
+.overview-card-count{
+    font-weight: 700;
+    font-size: 2rem;
+    align-self: end;
+}
+
+.overview-card-current{
+    justify-self: end;
+    align-self: end;
 }

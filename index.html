@@ -6,88 +6,231 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- displays site properly based on user's device -->
 
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 
     <title>Frontend Mentor | Social Media Dashboard</title>
-
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <style>
-        .attribution {
-            font-size: 11px;
-            text-align: center;
-        }
-
-        .attribution a {
-            color: hsl(228, 45%, 44%);
-        }
-    </style>
 </head>
 
 <body>
 
-    Social Media Dashboard
-    Total Followers: 23,004
+    <div class="top-BG"></div>
 
-    Dark Mode
+    <section class="card-heading-section flex-container">
 
+        <section class="app-info">
 
+            <h1>Social Media Dashboard</h1>
+            <span>Total Followers: 23,004</span>
 
-    @nathanf
-    1987
-    Followers
-    12 Today
+        </section>
 
-    @nathanf
-    1044
-    Followers
-    99 Today
+        <section class="toggle">
 
-    @realnathanf
-    11k
-    Followers
-    1099 Today
+            <span>Dark Mode</span>
 
-    Nathan F.
-    8239
-    Subscribers
-    144 Today
+        </section>
 
+    </section>
 
+    <section class="social-media flex-container">
 
-    Overview - Today
+        <article class="large-card facebook">
 
-    Page Views
-    87
-    3%
+            <div class="social-info">
 
-    Likes
-    52
-    2%
+                <img class="social-icon" src="img/icon-facebook.svg" alt="facebook icon">
+                <span class="user-handle">@nathanf</span>
 
-    Likes
-    5462
-    2257%
+            </div>
+            <span class="follower-count">1987</span>
+            <span class="follower-text">Followers</span>
+            <div class="daily-change">
 
-    Profile Views
-    52k
-    1375%
+                <img class="misc-icon" src="img/icon-up.svg" alt="up icon">
+                <span class="green-text">12 Today</span>
 
-    Retweets
-    117
-    303%
+            </div>
 
-    Likes
-    507
-    553%
+        </article>
 
-    Likes
-    107
-    19%
+        <article class="large-card twitter">
 
-    Total Views
-    1407
-    12%
+            <div class="social-info">
+
+                <img class="social-icon" src="img/icon-twitter.svg" alt="twitter icon">
+                <span class="user-handle">@nathanf</span>
+
+            </div>
+            <span class="follower-count">1044</span>
+            <span class="follower-text">Followers</span>
+            <div class="daily-change">
+
+                <img class="misc-icon" src="img/icon-up.svg" alt="up icon">
+                <span class="green-text">99 Today</span>
+
+            </div>
+
+        </article>
+
+        <article class="large-card instagram">
+
+            <div class="social-info">
+
+                <img class="social-icon" src="img/icon-instagram.svg" alt="instagram icon">
+                <span class="user-handle">@realnathanf</span>
+
+            </div>
+            <span class="follower-count">11k</span>
+            <span class="follower-text">Followers</span>
+            <div class="daily-change">
+
+                <img class="misc-icon" src="img/icon-up.svg" alt="up icon">
+                <span class="green-text">1099 Today</span>
+
+            </div>
+
+        </article>
+
+        <article class="large-card youtube">
+
+            <div class="social-info">
+
+                <img class="social-icon" src="img/icon-youtube.svg" alt="youtube icon">
+                <span class="user-handle">Nathan F.</span>
+
+            </div>
+            <span class="follower-count">8239</span>
+            <span class="follower-text">Subscribers</span>
+            <div class="daily-change">
+
+                <img class="misc-icon" src="img/icon-down.svg" alt="down icon">
+                <span class="red-text">144 Today</span>
+
+            </div>
+
+        </article>
+
+    </section>
+
+    <section class="overview-section flex-container">
+
+        <span class="overview-text">Overview - Today</span>
+
+        <article class="overview-card">
+
+            <span class="overview-card-heading">Page Views</span>
+            <img class="overview-card-icon" src="img/icon-facebook.svg" alt="facebook icon">
+            <span class="overview-card-count">87</span>
+            <div class="overview-card-current daily-change">
+
+                <img class="misc-icon" src="img/icon-up.svg" alt="up icon">
+                <span class="green-text">3%</span>
+
+            </div>
+
+        </article>
+
+        <article class="overview-card">
+
+            <span class="overview-card-heading">Likes</span>
+            <img class="overview-card-icon" src="img/icon-facebook.svg" alt="facebook icon">
+            <span class="overview-card-count">52</span>
+            <div class="overview-card-current daily-change">
+
+                <img class="misc-icon" src="img/icon-down.svg" alt="down icon">
+                <span class="red-text">2%</span>
+
+            </div>
+
+        </article>
+
+        <article class="overview-card">
+
+            <span class="overview-card-heading">Likes</span>
+            <img class="overview-card-icon" src="img/icon-instagram.svg" alt="instagram icon">
+            <span class="overview-card-count">5462</span>
+            <div class="overview-card-current daily-change">
+
+                <img class="misc-icon" src="img/icon-up.svg" alt="up icon">
+                <span class="green-text">2257%</span>
+
+            </div>
+
+        </article>
+
+        <article class="overview-card">
+
+            <span class="overview-card-heading">Profile Views</span>
+            <img class="overview-card-icon" src="img/icon-instagram.svg" alt="instagram icon">
+            <span class="overview-card-count">52k</span>
+            <div class="overview-card-current daily-change">
+
+                <img class="misc-icon" src="img/icon-up.svg" alt="up icon">
+                <span class="green-text">1375%</span>
+
+            </div>
+
+        </article>
+
+        <article class="overview-card">
+
+            <span class="overview-card-heading">Retweets</span>
+            <img class="overview-card-icon" src="img/icon-twitter.svg" alt="twitter icon">
+            <span class="overview-card-count">117</span>
+            <div class="overview-card-current daily-change">
+
+                <img class="misc-icon" src="img/icon-up.svg" alt="up icon">
+                <span class="green-text">303%</span>
+
+            </div>
+
+        </article>
+
+        <article class="overview-card">
+
+            <span class="overview-card-heading">Likes</span>
+            <img class="overview-card-icon" src="img/icon-twitter.svg" alt="twitter icon">
+            <span class="overview-card-count">507</span>
+            <div class="overview-card-current daily-change">
+
+                <img class="misc-icon" src="img/icon-up.svg" alt="up icon">
+                <span class="green-text">553%</span>
+
+            </div>
+
+        </article>
+
+        <article class="overview-card">
+
+            <span class="overview-card-heading">Likes</span>
+            <img class="overview-card-icon" src="img/icon-youtube.svg" alt="youtube icon">
+            <span class="overview-card-count">107</span>
+            <div class="overview-card-current daily-change">
+
+                <img class="misc-icon" src="img/icon-down.svg" alt="down icon">
+                <span class="red-text">19%</span>
+
+            </div>
+
+        </article>
+
+        <article class="overview-card">
+
+            <span class="overview-card-heading">Total Views</span>
+            <img class="overview-card-icon" src="img/icon-youtube.svg" alt="youtube icon">
+            <span class="overview-card-count">1407</span>
+            <div class="overview-card-current daily-change">
+
+                <img class="misc-icon" src="img/icon-down.svg" alt="down icon">
+                <span class="red-text">12%</span>
+
+            </div>
+
+        </article>
+
+    </section>
 
     <div class="attribution">
         Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
