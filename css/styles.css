@@ -21,22 +21,22 @@ html{
     --youtube:  hsl(348, 97%, 39%);
 
     /* Toggle */
-    --dark-theme:  linear-gradient hsl(210, 78%, 56%), hsl(146, 68%, 55%);
+    --dark-theme: linear-gradient(to right,  hsl(210, 78%, 56%), hsl(146, 68%, 55%));
     --light-theme:  hsl(230, 22%, 74%);
 
     /* Dark theme */
     --background-color-dark:  hsl(230, 17%, 14%);
     --top-background-color-dark: hsl(232, 19%, 15%);
     --card-background-dark:  hsl(228, 28%, 20%);
-    --text-color-1-dark: hsl(228, 34%, 66%); 
-    --text-color-2-dark: hsl(0, 0%, 100%);
+    --text-dark: hsl(228, 34%, 66%); 
+    --headings-dark: hsl(0, 0%, 100%);
 
     /* Light theme */
     --background-color-light: hsl(0, 0%, 100%);
     --top-background-color-light: hsl(225, 100%, 98%);
     --card-background-light:  hsl(227, 47%, 96%);
-    --text-color-1-light: hsl(228, 12%, 44%); 
-    --text-color-2-light: hsl(230, 17%, 14%);
+    --text-light: hsl(228, 12%, 44%); 
+    --headings-light: hsl(230, 17%, 14%);
 }
 
 body{
@@ -58,19 +58,63 @@ body{
 }
 
 .card-heading-section{
-    color: var(--text-color-1-light);
     font-weight: 700;
     display: flex;
     align-items: center;
 }
 
 .app-info > h1{
-    color: var(--text-color-2-light);
     font-size: 1.9em;
 }
 
-.toggle{
+.toggle-container{
+    display: flex;
+    align-items: center;
+    width: max-content;
     margin-left: auto;
+    /* This translation is neccesary because the toggle after
+    pseudo element extends to the right by 1rem */
+    transform: translateX(-1rem);
+}
+
+.toggle-area{
+    margin-left: calc(1rem + 8px);
+    position: relative;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+}
+
+.toggle-area::before{
+    position: absolute;
+    z-index: -1;
+    content: '';
+    width: 2rem;
+    height: 2rem;
+    background-color: inherit;
+    border-radius: 50%;
+    transform: translateX(-50%);
+}
+
+.toggle-area::after{
+    z-index: -1;
+    position: absolute;
+    content: '';
+    width: 2rem;
+    height: 2rem;
+    background-color: inherit;
+    border-radius: 50%;
+    transform: translateX(50%);
+}
+
+.toggle{
+    border-radius: 50%;
+    width: 1.6rem;
+    height: 1.6rem;
+    background-color: white;
+    transform: translateX(1.2rem);
+    transition: transform 100ms linear;
 }
 
 .social-media{
@@ -98,7 +142,6 @@ body{
     justify-content: center;
     gap: 8px;
     margin-bottom: 20px;
-    color: var(--text-color-1-light);
     font-weight: 700;
 }
 
@@ -107,13 +150,11 @@ body{
     grid-row-start: 4;
     font-weight: 700;
     font-size:4.3em;
-    color: var(--text-color-2-light);
 }
 
 .large-card > .follower-text{
     text-transform: uppercase;
     letter-spacing: 5px;
-    color: var(--text-color-1-light);
 }
 
 .large-card > :last-child{
@@ -172,7 +213,6 @@ body{
     display: block;
     font-size: 1.8em;
     font-weight: 700;
-    color: var(--text-color-1-light);
 }
 
 .overview-section{
@@ -209,4 +249,40 @@ body{
 .overview-card-current{
     justify-self: end;
     align-self: end;
+}
+
+.toggle-light-theme{
+    background-color: var(--light-theme);
+}
+
+.toggle-dark-theme{
+    background-color: var(--dark-theme);
+}
+
+.headings-light{
+    color: var(--headings-light);
+}
+
+.headings-dark{
+    color: var(--headings-dark);
+}
+
+.text-light{
+    color: var(--text-light);
+}
+
+.text-dark{
+    color: var(--text-dark);
+}
+
+.attribution{ 
+    font-size: small; 
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin: 8px 0;
+}
+
+.attribution > *{
+    margin: 0 4px 0;
 }
