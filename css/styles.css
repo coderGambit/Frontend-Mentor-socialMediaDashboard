@@ -50,6 +50,7 @@ body{
     position: absolute;
     top: 0;
     z-index: -1;
+    border-radius: 0 0 20px 20px;
 }
 
 .container{
@@ -285,4 +286,49 @@ body{
 
 .attribution > *{
     margin: 0 4px 0;
+}
+
+@media only screen and (max-width: 640px){
+
+    .container{
+        margin: 2.5rem 2rem;
+    }
+
+    .card-heading-section{
+        flex-wrap: wrap;
+    } 
+
+    .toggle-container{
+        justify-content: space-between;
+        width: 100%;
+        border-top: 1px solid;
+        padding-top: 1rem;
+        margin-top: 1rem;
+        margin-left: 0;
+        transform: translateX(0);
+    }
+
+    .toggle-area{
+        transform: translateX(-1rem);
+    }
+
+    .large-card{
+        width: 100%;
+    }
+
+    .instagram::before{
+        width: 100%;
+    }
+
+    .overview-text{
+        margin: 4rem 2rem 2rem;
+    }
+
+    .overview-section{
+        grid-template-columns: 1fr;
+    }
+
+    .overview-card{
+        width: 100%;
+    }
 }
