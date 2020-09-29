@@ -95,6 +95,7 @@ body{
     position: relative;
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
 .toggle-left{
