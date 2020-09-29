@@ -21,8 +21,8 @@ html{
     --youtube:  hsl(348, 97%, 39%);
 
     /* Toggle */
-    --dark-theme-before: linear-gradient(to right,  hsl(210, 78%, 56%), hsl(180, 51%, 47%));
-    --dark-theme-after: linear-gradient(to right,  hsl(180, 51%, 47%), hsl(146, 68%, 55%));
+    --dark-theme-left: linear-gradient(to right,  hsl(210, 78%, 56%), hsl(180, 51%, 47%));
+    --dark-theme-right: linear-gradient(to right,  hsl(180, 51%, 47%), hsl(146, 68%, 55%));
     --light-theme:  hsl(230, 22%, 74%);
 
     /* Dark theme */
@@ -79,9 +79,6 @@ body{
     align-items: center;
     width: max-content;
     margin-left: auto;
-    /* This translation is neccesary because the toggle after
-    pseudo element extends to the right by 1rem */
-    transform: translateX(-2rem);
 }
 
 .toggle-label{
@@ -89,44 +86,39 @@ body{
 }
 
 .toggle-area{
-    margin-left: calc(2rem + 8px);
-    position: relative;
-    width: 0;
+    margin-left: calc(1rem);
+    width: 4rem;
     height: 2rem;
+    position: relative;
     display: flex;
     align-items: center;
+}
+
+.toggle-left{
+    position: absolute;
+    z-index: -1;
+    width: 2rem;
+    height: 2rem;
     background-color: var(--light-theme);
-}
-
-.toggle-area::before{
-    position: absolute;
-    z-index: -1;
-    content: '';
-    width: 2rem;
-    height: 2rem;
-    background-color: inherit;
     border-radius: 50% 0 0 50%;
-    transform: translateX(-100%);
 }
 
-.toggle-area::after{
+.toggle-right{
     z-index: -1;
     position: absolute;
-    content: '';
     width: 2rem;
     height: 2rem;
-    background-color: inherit;
+    background-color: var(--light-theme);
     border-radius: 0 50% 50% 0;
-    transform: translateX(0%);
+    transform: translateX(2rem);
 }
 
 .toggle{
     border-radius: 50%;
-    position: absolute;
-    width: 1.6rem;
-    height: 1.6rem;
+    width: 1.5rem;
+    height: 1.5rem;
     background-color: white;
-    transform: translateX(0.2rem);
+    transform: translateX(2.2rem);
     transition: transform 100ms linear;
 }
 
@@ -273,20 +265,16 @@ body{
     align-self: end;
 }
 
-.toggle-dark-theme{
-    background-image: var(--dark-theme-main);
+.toggle-dark-left{
+    background-image: var(--dark-theme-left);
 }
 
-.toggle-dark-theme::before{
-    background-image: var(--dark-theme-before);
-}
-
-.toggle-dark-theme::after{
-    background-image: var(--dark-theme-after);
+.toggle-dark-right{
+    background-image: var(--dark-theme-right);
 }
 
 .toggle-dark-theme-switch{
-    transform: translateX(-1.8rem);
+    transform: translateX(0.2rem);
     background-color: var(--background-color-dark);
 }
 
