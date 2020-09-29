@@ -21,31 +21,34 @@ html{
     --youtube:  hsl(348, 97%, 39%);
 
     /* Toggle */
-    --dark-theme-left: linear-gradient(to right,  hsl(210, 78%, 56%), hsl(180, 51%, 47%));
-    --dark-theme-right: linear-gradient(to right,  hsl(180, 51%, 47%), hsl(146, 68%, 55%));
-    --light-theme:  hsl(230, 22%, 74%);
+    --toggle-bg-left: hsl(230, 22%, 74%);
+    --toggle-bg-right: hsl(230, 22%, 74%);
+    --toggle: white;
 
-    /* Dark theme */
-    --background-color-dark:  hsl(230, 17%, 14%);
-    --top-background-color-dark: hsl(232, 19%, 15%);
-    --card-background-dark:  hsl(228, 28%, 20%);
-    --text-dark: hsl(228, 34%, 66%); 
-    --headings-dark: hsl(0, 0%, 100%);
+    --bg-color: hsl(0, 0%, 100%);
+    --top-bg-color: hsl(225, 100%, 98%);
+    --card-bg-color:  hsl(227, 47%, 96%);
+    --text-color: hsl(228, 12%, 44%); 
+    --headings-color: hsl(230, 17%, 14%);
+}
 
-    /* Light theme */
-    --background-color-light: hsl(0, 0%, 100%);
-    --top-background-color-light: hsl(225, 100%, 98%);
-    --card-background-light:  hsl(227, 47%, 96%);
-    --text-light: hsl(228, 12%, 44%); 
-    --headings-light: hsl(230, 17%, 14%);
+[data-theme='dark']{
+    --toggle-bg-left: linear-gradient(to right,  hsl(210, 78%, 56%), hsl(180, 51%, 47%));
+    --toggle-bg-right: linear-gradient(to right,  hsl(180, 51%, 47%), hsl(146, 68%, 55%));
+    --toggle: hsl(230, 17%, 14%);
+    --bg-color:  hsl(230, 17%, 14%);
+    --top-bg-color:hsl(232, 19%, 15%);
+    --card-bg-color:   hsl(228, 28%, 20%);
+    --text-color: hsl(228, 34%, 66%); 
+    --headings-color: hsl(0, 0%, 100%);
 }
 
 body{
-    background-color: var(--background-color-light);
+    background-color: var(--bg-color);
 }
 
 .top-BG{
-    background-color: var(--top-background-color-light);
+    background-color: var(--top-bg-color);
     width: 100%;
     height: 240px;
     position: absolute;
@@ -67,11 +70,11 @@ body{
 
 .app-info > h1{
     font-size: 1.9em;
-    color: var(--headings-light);
+    color: var(--headings-color);
 }
 
 .app-info > span{
-    color: var(--text-light);
+    color: var(--text-color);
 }
 
 .toggle-container{
@@ -82,7 +85,7 @@ body{
 }
 
 .toggle-label{
-    color: var(--text-light);
+    color: var(--text-color);
 }
 
 .toggle-area{
@@ -99,7 +102,7 @@ body{
     z-index: -1;
     width: 2rem;
     height: 2rem;
-    background-color: var(--light-theme);
+    background: var(--toggle-bg-left);
     border-radius: 50% 0 0 50%;
 }
 
@@ -108,7 +111,7 @@ body{
     position: absolute;
     width: 2rem;
     height: 2rem;
-    background-color: var(--light-theme);
+    background: var(--toggle-bg-right);
     border-radius: 0 50% 50% 0;
     transform: translateX(2rem);
 }
@@ -117,7 +120,7 @@ body{
     border-radius: 50%;
     width: 1.5rem;
     height: 1.5rem;
-    background-color: white;
+    background-color: var(--toggle);
     transform: translateX(2.2rem);
     transition: transform 100ms linear;
 }
@@ -139,7 +142,7 @@ body{
     width: 250px;
     height: 250px;
     flex: 0 0 auto;
-    background-color: var(--card-background-light);
+    background-color: var(--card-bg-color);
 }
 
 .social-info{
@@ -151,7 +154,7 @@ body{
 }
 
 .user-handle{
-    color: var(--text-light);
+    color: var(--text-color);
 }
 
 .follower-count{
@@ -159,13 +162,13 @@ body{
     grid-row-start: 4;
     font-weight: 700;
     font-size:4.3em;
-    color: var(--headings-light);
+    color: var(--headings-color);
 }
 
 .follower-text{
     text-transform: uppercase;
     letter-spacing: 5px;
-    color: var(--text-light);
+    color: var(--text-color);
 }
 
 .large-card > :last-child{
@@ -224,7 +227,7 @@ body{
     display: block;
     font-size: 1.8em;
     font-weight: 700;
-    color: var(--text-light);
+    color: var(--text-color);
 }
 
 .overview-section{
@@ -237,7 +240,7 @@ body{
 .overview-card{
     width: 250px;
     height: 125px;
-    background-color: var(--card-background-light);
+    background-color: var(--card-bg-color);
     border-radius: 5px;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -246,7 +249,7 @@ body{
 
 .overview-card-heading{
     font-weight: 700;
-    color: var(--text-light);
+    color: var(--text-color);
 }
 
 .overview-card-icon{
@@ -257,7 +260,7 @@ body{
     font-weight: 700;
     font-size: 2rem;
     align-self: end;
-    color: var(--headings-light);
+    color: var(--headings-color);
 }
 
 .overview-card-current{
@@ -265,37 +268,8 @@ body{
     align-self: end;
 }
 
-.toggle-dark-left{
-    background-image: var(--dark-theme-left);
-}
-
-.toggle-dark-right{
-    background-image: var(--dark-theme-right);
-}
-
-.toggle-dark-theme-switch{
+.toggle-dark{
     transform: translateX(0.2rem);
-    background-color: var(--background-color-dark);
-}
-
-.bg-dark{
-    background-color: var(--background-color-dark);
-}
-
-.card-bg-dark{
-    background-color: var(--card-background-dark);
-}
-
-.top-BG-dark{
-    background-color: var(--top-background-color-dark);
-}
-
-.headings-dark{
-    color: var(--headings-dark);
-}
-
-.text-dark{
-    color: var(--text-dark);
 }
 
 .attribution{ 
@@ -304,12 +278,12 @@ body{
     width: 100%;
     justify-content: center;
     margin: 8px 0;
-    color: var(--text-light);
+    color: var(--text-color);
 }
 
 .attribution > *{
     margin: 0 4px 0;
-    color: var(--headings-light);
+    color: var(--headings-color);
 }
 
 @media only screen and (max-width: 640px){
